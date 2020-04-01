@@ -1,0 +1,57 @@
+html {
+    font-size: $mz-font-size-base;
+    line-height: $mz-line-height-base;
+  }
+
+  body {
+    font-size: $mz-font-size-base;
+    font-family: $mz-font-family-base;
+    line-height: $mz-line-height-base;
+    background: #fff;
+    color: $mz-text-base;
+    top: 0!important; // ! Fix cho trình duyệt khi dùng google translate
+  }
+
+  a {
+    color: $mz-link-color;
+    text-decoration: none;
+    outline: none;
+
+    &:hover {
+      color: $mz-link-color-hovered;
+      text-decoration: none;
+    }
+
+    &:focus, &:active {
+      color: $mz-primary-darker;
+    }
+  }
+
+  p {
+    margin-bottom: 10px;
+  }
+
+  ul {
+    list-style: inside;
+    margin: 0;
+    padding: 0;
+  }
+
+  button, input, select, textarea {
+    outline: none!important;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  input:-webkit-autofill {
+    background-color: inherit;
+    background-image: inherit;
+    color: inherit;
+  }

@@ -1,0 +1,5 @@
+@for $i from 1 through length($mz-map-icon-country-code) {
+  @for $j from 1 through length($mz-map-icon-country-size) {
+    @include getCountryIconFromSize(nth($mz-map-icon-country-code, $i), nth($mz-map-icon-country-size, $j));
+  }
+}

@@ -1,0 +1,10 @@
+/*
+  Sử dụng function này để get line-height tùy vào font-size theo công thức :
+  - line-height = font-size/2 + font-size
+
+  ! Nhớ làm tròn bằng hàm round(font-size/2)
+*/
+
+@function getLineHeightOfFontSize($font-size) {
+  @return $font-size/2 + $font-size;
+}

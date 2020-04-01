@@ -1,0 +1,57 @@
+/*
+  Giới hạn số dòng text và hiển thị ... ở dòng cuối giới hạn
+  VD:
+    - Ta có chuỗi
+      `Est elit amet veniam
+      sunt sit eiusmod irure
+      irure tempor et quis
+      non ipsum.`
+    - Sử dụng hàm
+      mz-limit-text-line('default',3)
+    - Kết quả sẽ hiển thị là
+      `Est elit amet veniam
+      sunt sit eiusmod irure
+      irure tempor et...`
+*/
+@mixin mz-limit-text-line($font-size: $mz-font-size-base, $line-limit: 2) {
+  $line-height: 0;
+
+  @if(map-has-key($mz-map-text-size, $font-size)) {
+    $font-size: map-get($mz-map-text-size, $font-size);
+    $line-height: getLineHeightOfFontSize($font-size);
+  } @else if (map-has-key($mz-map-heading-size, $font-size)) {
+    $font-size: map-get($mz-map-heading-size, $font-size);
+    $line-height: getLineHeightOfFontSize($font-size);
+  } @else if (is-absolute-length($font-size)) {
+    $line-height: getLineHeightOfFontSize($font-size);
+  } @else {
+    @error '$font-size: ' + $font-size + ' is not valid';
+  }
+
+  @if not is-integer($line-limit) {
+    @error '$line-limit: ' + $line-limit + ' is not valid';
+  }
+
+  max-height: $line-height * $line-limit;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line-limit;
+}
+
+@mixin mz-make-col($int-col-amount: 12) {
+  @if not is-integer($int-col-amount) {
+    @error '$int-col-amount: ' + $int-col-amount + ' is not valid';
+  }
+
+  $_int-total-col: 12;
+
+  flex: 0 0 percentage($int-col-amount/$_int-total-col);
+}
+
+@mixin mz-get-font-awesome-icon($_codeFont,$_fontWeightName){
+  content:'' + $_codeFont;
+  font-family: $mz-font-family-fa5;
+  font-weight: mz-get-font-awesome-weight($_fontWeightName);
+}

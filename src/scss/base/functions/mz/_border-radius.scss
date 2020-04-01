@@ -1,0 +1,3 @@
+@function getBorderRadiusFromBase($scale) {
+    @return $mz-border-radius-base * $scale;
+  }

@@ -1,0 +1,186 @@
+/*
+  Rule name for variables :
+
+  $(prefix)-(noun)-(adjective)
+  vd :
+  - $mz-gray-light
+  - $(miczone)mz-(noun)gray-(adjective)light - ( có thể bỏ đi adjective nếu không nghĩ ra adjective để mô tả, nhưng bắt buộc phải có "prefix" và "noun" )
+
+  ! remember comment when define a new list or a variables
+*/
+
+// Main color pallete
+
+//-------------------
+// Gray
+
+$mz-gray-base: #1b2028;
+$mz-gray: lighten($mz-gray-base, 53%);
+$mz-gray-root: $mz-gray;
+$mz-gray-light: lighten($mz-gray-base, 70%);
+$mz-gray-lighter: lighten($mz-gray-base, 80%);
+$mz-gray-lightest: lighten($mz-gray-base, 83%);
+$mz-gray-dark: lighten($mz-gray-base, 26%);
+$mz-gray-darker: lighten($mz-gray-base, 10%);
+$mz-gray-overlay: blend-overlay($mz-gray-base, lighten($mz-gray-base, 70%)); // blend-overlay is a extention function to overlay/blend color in scss (in less is overlay)
+//Reference link : https://libraries.io/github/timhettler
+
+// Grayscales
+$mz-gray-900: $mz-gray-base;
+$mz-gray-800: lighten($mz-gray-base, 10%);
+$mz-gray-700: lighten($mz-gray-base, 20%);
+$mz-gray-600: lighten($mz-gray-base, 30%);
+$mz-gray-500: lighten($mz-gray-base, 40%);
+$mz-gray-400: lighten($mz-gray-base, 50%);
+$mz-gray-300: lighten($mz-gray-base, 60%);
+$mz-gray-200: lighten($mz-gray-base, 70%);
+$mz-gray-100: lighten($mz-gray-base, 80%);
+
+// Primary
+$mz-primary: #0080FF;
+$mz-primary-root: $mz-primary;
+$mz-primary-light: lighten($mz-primary, 10%);
+$mz-primary-lighter: lighten($mz-primary, 35%);
+$mz-primary-lightest: lighten($mz-primary, 45%);
+$mz-primary-dark: darken($mz-primary, 10%);
+$mz-primary-darker: darken($mz-primary, 18%);
+$mz-primary-overlay: blend-overlay($mz-primary, lighten($mz-gray-base, 74%));
+
+// Secondary
+$mz-secondary: #2E5ACF;
+$mz-secondary-root: $mz-secondary;
+$mz-secondary-light: lighten($mz-secondary, 10%);
+$mz-secondary-lighter: lighten($mz-secondary, 35%);
+$mz-secondary-lightest: lighten($mz-secondary, 45%);
+$mz-secondary-dark: darken($mz-secondary, 10%);
+$mz-secondary-darker: darken($mz-secondary, 18%);
+$mz-secondary-overlay: blend-overlay($mz-secondary, lighten($mz-gray-base, 74%));
+
+// Info
+$mz-info: #3596B9;
+$mz-info-root: $mz-info;
+$mz-info-light: lighten($mz-info, 10%);
+$mz-info-lighter: lighten($mz-info, 35%);
+$mz-info-lightest: lighten($mz-info, 45%);
+$mz-info-dark: darken($mz-info, 10%);
+$mz-info-darker: darken($mz-info, 18%);
+$mz-info-overlay: blend-overlay($mz-info, lighten($mz-gray-base, 74%));
+
+// Success
+$mz-success: #2EC16C;
+$mz-success-root: $mz-success;
+$mz-success-light: lighten($mz-success, 10%);
+$mz-success-lighter: lighten($mz-success, 35%);
+$mz-success-lightest: lighten($mz-success, 45%);
+$mz-success-dark: darken($mz-success, 10%);
+$mz-success-darker: darken($mz-success, 18%);
+$mz-success-overlay: blend-overlay($mz-success, lighten($mz-gray-base, 74%));
+
+// Warning
+$mz-warning: #FFA400;
+$mz-warning-root: $mz-warning;
+$mz-warning-light: lighten($mz-warning, 10%);
+$mz-warning-lighter: lighten($mz-warning, 35%);
+$mz-warning-lightest: lighten($mz-warning, 45%);
+$mz-warning-dark: darken($mz-warning, 10%);
+$mz-warning-darker: darken($mz-warning, 18%);
+$mz-warning-overlay: blend-overlay($mz-warning, lighten($mz-gray-base, 74%));
+
+// Danger
+$mz-danger: #CD353B;
+$mz-danger-root: $mz-danger;
+$mz-danger-light: lighten($mz-danger, 10%);
+$mz-danger-lighter: lighten($mz-danger, 35%);
+$mz-danger-lightest: lighten($mz-danger, 45%);
+$mz-danger-dark: darken($mz-danger, 10%);
+$mz-danger-darker: darken($mz-danger, 18%);
+$mz-danger-overlay: blend-overlay($mz-danger, lighten($mz-gray-base, 74%));
+
+// Map level color ( tạo ra một mảng màu để truy xuất qua lại khi thực hiện tăng giảm màu trong số màu có sẵn )
+
+$mz-map-color-level-index: (
+  'lightest' : 0,
+  'lighter' : 1,
+  'light' : 2,
+  'root' : 3,
+  'dark' : 4,
+  'darker' : 5,
+);
+
+$mz-map-color-level-name: (
+  0 : 'lightest',
+  1 : 'lighter',
+  2 : 'light',
+  3 : 'root',
+  4 : 'dark',
+  5 : 'darker',
+);
+
+$mz-max-color-level-index: 5;
+
+// Main map color
+
+$mz-map-palette-color: (
+  'gray' : (
+    'lightest' : $mz-gray-lightest,
+    'lighter' : $mz-gray-lighter,
+    'light' : $mz-gray-light,
+    'root' : $mz-gray-root,
+    'dark' : $mz-gray-dark,
+    'darker' : $mz-gray-darker,
+  ),
+  'primary' : (
+    'lightest' : $mz-primary-lightest,
+    'lighter' : $mz-primary-lighter,
+    'light' : $mz-primary-light,
+    'root' : $mz-primary-root,
+    'dark' : $mz-primary-dark,
+    'darker' : $mz-primary-darker,
+  ),
+  'secondary' : (
+    'lightest' : $mz-secondary-lightest,
+    'lighter' : $mz-secondary-lighter,
+    'light' : $mz-secondary-light,
+    'root' : $mz-secondary-root,
+    'dark' : $mz-secondary-dark,
+    'darker' : $mz-secondary-darker,
+  ),
+  'info' : (
+    'lightest' : $mz-info-lightest,
+    'lighter' : $mz-info-lighter,
+    'light' : $mz-info-light,
+    'root' : $mz-info-root,
+    'dark' : $mz-info-dark,
+    'darker' : $mz-info-darker,
+  ),
+  'success' : (
+    'lightest' : $mz-success-lightest,
+    'lighter' : $mz-success-lighter,
+    'light' : $mz-success-light,
+    'root' : $mz-success-root,
+    'dark' : $mz-success-dark,
+    'darker' : $mz-success-darker,
+  ),
+  'warning' : (
+    'lightest' : $mz-warning-lightest,
+    'lighter' : $mz-warning-lighter,
+    'light' : $mz-warning-light,
+    'root' : $mz-warning-root,
+    'dark' : $mz-warning-dark,
+    'darker' : $mz-warning-darker,
+  ),
+);
+
+// Theme color
+$mz-map-main-color : (
+  'gray' : $mz-gray,
+  'primary' : $mz-primary,
+  'secondary' : $mz-secondary,
+  'info' : $mz-info,
+  'success' : $mz-success,
+  'warning' : $mz-warning,
+  'danger' : $mz-danger,
+);
+
+// Adition color
+$mz-purple : #9b4599;

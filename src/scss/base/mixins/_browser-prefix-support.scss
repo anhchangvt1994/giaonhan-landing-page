@@ -1,0 +1,23 @@
+// box-shadow
+
+@mixin box-shadow($value...) {
+  -webkit-box-shadow: $value;
+  -moz-box-shadow:    $value;
+  box-shadow:         $value;
+}
+
+// transform
+
+@mixin transform($value...) {
+  -webkit-transform: $value;
+  -ms-transform: $value;
+  transform: $value;
+}
+
+// transition
+
+@mixin transition($value...) {
+  -webkit-transition: $value;
+  -o-transition: $value;
+  transition: $value;
+}

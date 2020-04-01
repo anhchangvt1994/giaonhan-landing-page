@@ -1,0 +1,81 @@
+// =============================================
+// Noty theme fado Alert / success / warning
+// =============================================
+.noty_theme__my-alert {
+  &.noty_type__warning,
+  &.noty_type__danger,
+  &.noty_type__success {
+    color: #fff;
+    border-radius: $old-border-radius;
+    box-shadow: 0 0 8px rgba(#000,0.2);
+    padding: 4px 10px;
+    background: $mz-gray-darker;
+    font-size: 13px;
+    line-height: 18px;
+
+    .noty_body {
+      display: flex;
+      justify-content: center;
+
+      &__icon-col {
+        flex: 0 0 24px;
+        width: 24px;
+        padding: 4px 0;
+        min-width: 1px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 10px;
+      }
+
+      &__icon {
+        font-size: 24px;
+        line-height: 24px;
+      }
+
+      &__content-col {
+        flex: 1 1;
+        min-width: 1px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 4px 0;
+        text-align: center;
+      }
+    }// .noty_body
+
+    &:hover {
+      background: darken($mz-gray-darker,3%);
+    }
+  }// end noty_type...
+
+  // Alert
+  // ---------
+  &.noty_type__warning {
+    .noty_body {
+      &__icon-col {
+        color: $noty-alert-warning-text-color;
+      }
+    }
+  }
+
+  // Danger
+  // ---------
+  &.noty_type__danger {
+    .noty_body {
+      &__icon-col {
+        color: $old-alert-danger-text-color;
+      }
+    }
+  }
+
+  // Success
+  // ---------
+  &.noty_type__success {
+    .noty_body {
+      &__icon-col {
+        color: $old-alert-success-text-color;
+      }
+    }
+  }
+}// .noty_theme__fd

@@ -1,0 +1,31 @@
+// ######################################################
+// Layout
+// ######################################################
+
+// Page size
+// -------------------
+$mz-page-min-width: 1280px; // ! Min with tối thiểu cần set cho các block component, thẻ body không bị scroll ngang
+
+// mz container size
+$mz-container-width-xs: 320px;
+$mz-side-space-xs: 24px;
+$mz-max-width-xs: 520px;
+$mz-container-width-sm: 592px;
+$mz-side-space-sm: 48px;
+$mz-max-width-sm: 632px;
+$mz-container-width-md: 752px;
+$mz-side-space-md: 48px;
+$mz-container-width-lg: 992px;
+$mz-side-space-lg: 48px;
+$mz-container-width-xl: 1280px;
+$mz-side-space-xl: 48px;
+$mz-container-width-xxl: 1328px;
+$mz-side-space-xxl: 48px;
+
+// Spacing
+// -------------------
+$mz-space-base: 8px; // ! Sử dụng này rồi nhân lên * x để lấy số chính xác. Sử dụng cho margin,padding
+
+// Border radius
+// -------------------
+$mz-border-radius-base: 2px;

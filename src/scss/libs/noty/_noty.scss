@@ -1,0 +1,17 @@
+$noty-primary-color: #333;
+$noty-default-width: 360px;
+$noty-corner-space: 20px;
+
+// Alert warning
+$noty-alert-warning-text-color: #eede2c;
+
+// Loading warning
+$noty-loading-warning-bg-color: #fff9e7;
+$noty-loading-warning-text-color: #1f1e1d;
+
+// =============================================
+// In Plugin
+// =============================================
+@import 'noty-layout';
+@import 'noty_theme__my-alert';
+@import 'noty_theme__my-loading';

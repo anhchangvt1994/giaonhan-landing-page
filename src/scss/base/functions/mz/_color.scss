@@ -1,0 +1,211 @@
+//! Lưu ý function nào chỉ sử dụng private ( nội bộ ) trong file thì thêm _(shift + -)functionName cho nó.
+
+//! Muốn get giá trị từ một map nào đó thì trước tiên luôn phải check xem key đó có tồn tại trong map đó không, sau đó mới ném lỗi hoặc tiếp tục get giá trị thuộc key đó trong map ra return về.
+
+// Kiểm trả level màu hợp lệ không
+
+@function _checkColorLevelNameIsValid($level-name) {
+  @if map-has-key($mz-map-color-level-index, $level-name) {
+    @return true;
+  }
+
+  @return false;
+}
+
+@function _checkColorLevelIndexIsValid($level-index) {
+  @if map-has-key($mz-map-color-level-name, $level-index) {
+    @return true;
+  }
+
+  @return false;
+}
+
+/*
+  - Sử dụng để convert tên color variable name sang index của nó trong map-color
+---------------------------------------
+  trích [ ../vars/color.scss ]
+
+  $mz-map-color-level-index: (
+  'lightest' : 0,
+  'lighter' : 1,
+  'light' : 2,
+  'root' : 3,
+  'dark' : 4,
+  'darker' : 5,
+);
+
+$mz-map-color-level-name: (
+  0 : 'lightest',
+  1 : 'lighter',
+  2 : 'light',
+  3 : 'root',
+  4 : 'dark',
+  5 : 'darker',
+);
+---------------------------------------
+
+  - VD :
+  $level-index = convertColorLevelNameToIndex('dark');
+  ==> $level-index = 4;
+*/
+
+@function convertColorLevelNameToIndex($level-name) {
+  @if _checkColorLevelNameIsValid($level-name) {
+    @return map-get($mz-map-color-level-index, $level-name);
+  }
+
+  @error '@level-name is not valid'; // đoạn này là để báo lỗi khi trong lúc compile từ scss sang css nếu bị lỗi $level-name thì văng lỗi ra tiến trình compile
+}
+
+/*
+  - Sử dụng để convert tên colorindex sang variable name của nó trong map-color
+---------------------------------------
+  trích [ ../vars/color.scss ]
+
+  $mz-map-color-level-index: (
+  'lightest' : 0,
+  'lighter' : 1,
+  'light' : 2,
+  'root' : 3,
+  'dark' : 4,
+  'darker' : 5,
+);
+
+$mz-map-color-level-name: (
+  0 : 'lightest',
+  1 : 'lighter',
+  2 : 'light',
+  3 : 'root',
+  4 : 'dark',
+  5 : 'darker',
+);
+---------------------------------------
+
+  - VD :
+  $level-index = convertColorLevelIndexToName(4);
+  ==> $level-index = 'dark';
+*/
+
+@function convertColorLevelIndexToName($level-index) {
+  @if _checkColorLevelIndexIsValid($level-index) {
+    @return map-get($mz-map-color-level-name, $level-index);
+  }
+
+  @error '@level-index is not valid'; // đoạn này là để báo lỗi khi trong lúc compile từ scss sang css nếu bị lỗi $level-index thì văng lỗi ra tiến trình compile
+}
+
+/*
+  - Sử dụng để get color trong palette map
+---------------------------------------
+  trích [ ../vars/color.scss ]
+
+  $mz-map-palette-color: (
+    'gray' : (
+      'lightest' : $mz-gray-lightest,
+      'lighter' : $mz-gray-lighter,
+      'light' : $mz-gray-light,
+      'root' : $mz-gray-root,
+      'dark' : $mz-gray-dark,
+      'darker' : $mz-gray-darker,
+    ),
+    'primary' : (
+      'lightest' : $mz-primary-lightest,
+      'lighter' : $mz-primary-lighter,
+      'light' : $mz-primary-light,
+      'root' : $mz-primary-root,
+      'dark' : $mz-primary-dark,
+      'darker' : $mz-primary-darker,
+    ),
+    ...
+  );
+---------------------------------------
+
+  - VD :
+  $primary-dark = getColorInPaletteMap('primary', 'dark');
+  ==> $primary-dark = $mz-primary-dark = '#0066CC';
+
+  or
+
+  $primary-dark = getColorInPaletteMap('primary', 4);
+  ==> $primary-dark = $mz-primary-dark = '#0066CC';
+*/
+
+@function getColorInPaletteMap($color-name, $color-level: 'root') {
+  @if not map-has-key($mz-map-palette-color, $color-name) {
+    @error 'getColorInPaletteMap: $color-name not isset in palette map';
+  }
+
+  $map-color: map-get($mz-map-palette-color, $color-name); // get map color tương ứng với key trong list color palette map
+  $level-name: null;
+
+  @if is-number($color-level) and _checkColorLevelIndexIsValid($color-level) {
+    $level-name: convertColorLevelIndexToName($color-level);
+  } @else {
+    $level-name: $color-level;
+  }
+
+  @if not _checkColorLevelNameIsValid($level-name) {
+    @error 'getColorInPaletteMap: $color-level not isset in palette map';
+  }
+
+  @return map-get($map-color, $level-name); // khi tất cả điều kiện đã hợp lệ thì thực hiện truy vấn $level-name (màu tương ứng) từ $map-color (mảng màu tương ứng)
+}
+
+/*
+  - Lấy thông tin màu sắc và  cấp độ màu trong main palette
+*/
+
+@function getColorInfoInPaletteMap($color-code) {
+  @each $color-name, $map-of-color-name in $mz-map-palette-color {
+    @each $level-color-name, $level-color-code in $map-of-color-name {
+      @if($level-color-code == $color-code) {
+        @return (
+          'color-name' : $color-name,
+          'level-color-name' : $level-color-name,
+        );
+      }
+    }
+  }
+
+  @return null;
+}
+
+/*
+- Nguyên tắc lấy màu hover
+  - Lấy màu bên phải trong bảng palette
+  - Không tồn tại màu bên phải thì lấy tăng 5% darken
+*/
+
+@function getLinkHoverColor($color-code) {
+  @if not is-hex-color($color-code) {
+    @error '$color-code: ' + $color-code + 'is not valid';
+  }
+
+  $map-color : getColorInfoInPaletteMap($color-code);
+
+  @if not $map-color {
+    @return darken($color-code, 5%);
+  }
+
+  $level-index: convertColorLevelNameToIndex(map-get($map-color, 'level-color-name'));
+  $color-name: map-get($map-color, 'color-name');
+  $next-level-index : $level-index + 1;
+
+  @if($next-level-index > $mz-max-color-level-index) {
+    @if($color-name == 'gray') {
+      $color-name: 'primary';
+    }
+
+    @return getColorInPaletteMap(
+      $color-name,
+      'root'
+    )
+  }
+
+  $next-level-name : convertColorLevelIndexToName($next-level-index);
+
+  @return getColorInPaletteMap(
+    $color-name,
+    $next-level-name
+  );
+}

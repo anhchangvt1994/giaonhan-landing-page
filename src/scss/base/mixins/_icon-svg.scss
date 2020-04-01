@@ -1,0 +1,21 @@
+// country icon
+
+@mixin getCountryIconFromSize($country, $size: 20) {
+  @if (($country and is-string($country)) and is-number($size)) {
+    .icon-country-#{$country}{
+
+      &:before {
+        content: '';
+        display: block;
+        background: url('../images/svg/flag-circle-'+$country+'.svg') center/contain no-repeat;
+      }
+
+      &.--size-#{$size}:before {
+        width: $size + 0px;
+        height: $size + 0px;
+      }
+    }
+  } @else {
+      @error 'tham số truyền vào mixins getCountryIconFromSize() không đúng';
+  }
+}

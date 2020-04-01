@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "baseUrl": "./",
+    "paths": {
+      "@srcPath/*": ["src/*"],
+      "@scssPath/*": ["src/scss/*"],
+      "@scssPartialsPath/*": ["src/scss/partials/*"],
+      "@jsPath/*": ["src/js/*"],
+      "@jsLibsPath/*": ["src/js/libs/*"],
+      "@jsBasePath/*": ["src/js/base/*"],
+      "@jsPartialsPath/*": ["src/js/partials/*"],
+      "@jsGlobalPath/*": ["src/js/partials/global/*"],
+      "@vuePath/*": ["src/js/vue/*"]
+    }
+  },
+  "exclude": ["dist", "node_modules", "tmp", "temp", ".vscode", ".sass-cache"],
+  "include": ["./src/js/**/*", "./src/vue/**/*"]
+}

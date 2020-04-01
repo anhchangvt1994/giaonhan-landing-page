@@ -1,0 +1,10 @@
+@import 'light';
+
+// ===================================
+// Custom
+// ===================================
+.flatpickr-input {
+  &:read-only {
+    background: #fff;
+  }
+}

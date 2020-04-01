@@ -1,0 +1,38 @@
+//! Lưu ý function nào chỉ sử dụng private ( nội bộ ) trong file thì thêm _(shift + -)functionName cho nó.
+
+//! Muốn get giá trị từ một map nào đó thì trước tiên luôn phải check xem key đó có tồn tại trong map đó không, sau đó mới ném lỗi hoặc tiếp tục get giá trị thuộc key đó trong map ra return về.
+
+// Kiểm tra xem giá trị key item của $mz-map-text-size có tồn tại không, nếu có thì trả về map chứa $key
+
+@function _getExistMapHasTheKey($key) {
+  @if($key) {
+    @if map-has-key($mz-map-text-size , $key) {
+      @return $mz-map-text-size;
+    }
+
+    @else if map-has-key($mz-map-heading-size , $key) {
+      @return $mz-map-heading-size;
+    }
+
+    @return null;
+  }  @else {
+    @error 'vui lòng truyền vào $key';
+  }
+}
+
+// Lấy thông tin 'font-size' và 'line-height' trong $mz-map-text-size thuộc $key tương ứng nếu có tồn tại
+
+@function getInforOfMapTextSize($key) {
+  @if not _getExistMapHasTheKey($key) {
+    @if is-number($key) and index('px', unit($key)) {
+      @return (
+        'font-size' : $key,
+        'line-height' : getLineHeightOfFontSize($key),
+      );
+    }
+  }
+
+  $mz-map-text-size-of-key : _getExistMapHasTheKey($key);
+  @return map-get($mz-map-text-size-of-key, $key);
+}
+

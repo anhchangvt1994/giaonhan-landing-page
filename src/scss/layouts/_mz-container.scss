@@ -1,0 +1,33 @@
+.mz-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 $mz-side-space-xs;
+  max-width: $mz-max-width-xs;
+
+  @include mq-sm-up {
+    width: $mz-container-width-sm;
+    padding: 0 $mz-side-space-sm;
+    max-width: $mz-max-width-sm;
+  }
+
+  @include mq-md-up {
+    width: $mz-container-width-md;
+    padding: 0 $mz-side-space-md;
+    max-width: none;
+  }
+
+  @include mq-lg-up {
+    width: $mz-container-width-lg;
+    padding: 0 $mz-side-space-lg;
+  }
+
+  @include mq-xl-up {
+    width: $mz-container-width-xl;
+    padding: 0 $mz-side-space-xl;
+  }
+
+  @include mq-xxl-up {
+    width: $mz-container-width-xxl;
+    padding: 0 $mz-side-space-xxl;
+  }
+}

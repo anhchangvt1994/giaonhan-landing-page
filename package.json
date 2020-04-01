@@ -1,0 +1,84 @@
+{
+  "name": "v1",
+  "version": "1.0.0",
+  "description": "v1",
+  "main": "web.config.js",
+  "dependencies": {
+    "@fancyapps/fancybox": "^3.5.7",
+    "bootstrap": "^4.1.2",
+    "dependencies": "0.0.1",
+    "jquery": "^3.3.1",
+    "locutus": "^2.0.10",
+    "lodash": "^4.17.11",
+    "noty": "^3.2.0-beta",
+    "numeral": "^2.0.6",
+    "swiper": "^4.5.0",
+    "urijs": "^1.19.1",
+    "wowjs": "^1.1.3"
+  },
+  "devDependencies": {
+    "autoprefixer": "^8.6.5",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "browserslist": "^4.0.0",
+    "clean-webpack-plugin": "^0.1.19",
+    "copy-webpack-plugin": "^4.5.2",
+    "css-loader": "^1.0.0",
+    "cssnano": "^4.0.2",
+    "cssnano-preset-advanced": "^4.0.0",
+    "expose-loader": "^0.7.5",
+    "filemanager-webpack-plugin": "^2.0.5",
+    "image-webpack-loader": "^4.3.1",
+    "imagemin": "^5.3.1",
+    "imagemin-giflossy": "^5.1.10",
+    "imagemin-mozjpeg": "^8.0.0",
+    "imagemin-pngquant": "^7.0.0",
+    "imagemin-webpack-plugin": "^2.2.0",
+    "imagemin-zopfli": "^6.0.0",
+    "mini-css-extract-plugin": "^0.4.1",
+    "node-sass": "^4.9.2",
+    "postcss-cli": "^5.0.1",
+    "postcss-discard-comments": "^4.0.0",
+    "postcss-loader": "^2.1.6",
+    "sass-loader": "^7.0.3",
+    "uglifyjs-webpack-plugin": "^1.2.7",
+    "vue-loader": "^15.2.4",
+    "vue-template-compiler": "^2.5.16",
+    "webpack": "^4.16.0",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.4",
+    "webpack-extraneous-file-cleanup-plugin": "^2.0.0",
+    "write-file-webpack-plugin": "^4.3.2",
+    "yargs": "^13.2.1"
+  },
+  "scripts": {
+    "dev": "webpack-dev-server --config webpack.config.dev.js --mode=development --watch=true --inline=false",
+    "dev:reload": "webpack-dev-server --config webpack.config.dev.js --mode=development --watch=true",
+    "prod:optimize": "webpack --config webpack.config.prod.js --mode=production",
+    "prod": "webpack --config webpack.config.prod.js --mode=production --imagemin=no",
+    "sprite-image-scss": "glue src/sprite-image/_sprite-image --scss --scss-template=src/sprite-image/_sprite-image/scss.jinja --output=src/scss/base/ --img=src/images --url=images/",
+    "sprite-image-mixin": "glue src/sprite-image/_sprite-image --scss --scss-template=src/sprite-image/_sprite-image/scss-mixin.jinja --no-img --output=src/scss/helpers/mixins/ --url=images/",
+    "sprite-image-html": "glue src/sprite-image/_sprite-image --output=src/sprite-image/sprite-image-html --css=src/sprite-image/sprite-image-html --img=src/sprite-image/sprite-image-html --html",
+    "sprite-image": "npm run sprite-image-scss && npm run sprite-image-mixin && npm run sprite-image-html"
+  },
+  "keywords": [
+    "v1"
+  ],
+  "author": "Kytosai@gmail.com",
+  "license": "ISC",
+  "babel": {
+    "presets": [
+      "stage-0",
+      "env"
+    ]
+  },
+  "browserslist": [
+    "> 1%",
+    "Firefox > 40",
+    "Chrome > 40",
+    "safari > 9",
+    "ie >= 11"
+  ]
+}

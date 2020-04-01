@@ -1,0 +1,18 @@
+// Lấy size của text kèm theo line-height
+
+@mixin getSizeOfText($key) {
+  $mz-map-text-size-of-key : getInforOfMapTextSize($key);
+
+  font-size: map-get($mz-map-text-size-of-key, 'font-size');
+  line-height: map-get($mz-map-text-size-of-key, 'line-height');
+}
+
+// Custom cho placeholder text
+
+@mixin placeholder {
+  &::placeholder               {@content};
+  &::-webkit-input-placeholder {@content};
+  &:-moz-placeholder           {@content};
+  &::-moz-placeholder          {@content};
+  &:-ms-input-placeholder      {@content};
+}

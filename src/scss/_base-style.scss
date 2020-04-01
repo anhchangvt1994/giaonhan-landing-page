@@ -1,0 +1,38 @@
+/*
+! Đặt tên file là base-style vì éo hiểu sao để base thằng webpack sass-loader lại không thể import được. Fuck fuck fuck (29-05-2019)
+- Lưu ý thứ tự import file cẩn thận khi thay đổi
+*/
+
+// Functions extention
+@import './base/functions/general/type';
+@import './base/functions/general/blend-modes';
+
+// Functions mz
+@import './base/functions/mz/color';
+@import './base/functions/mz/line-height';
+@import './base/functions/mz/typography';
+@import './base/functions/mz/spacing';
+@import './base/functions/mz/border-radius';
+
+// Deep-map
+@import './base/functions/deep-map/deep-map-check';
+@import './base/functions/deep-map/deep-map-get';
+@import './base/functions/deep-map/deep-map';
+
+// Variables
+@import './base/vars/color';
+@import './base/vars/typography';
+@import './base/vars/url';
+@import './base/vars/media-queries';
+@import './base/vars/layouts';
+@import './base/vars/icon-svg';
+@import './base/vars/bootstrap-overrides';
+@import './base/vars/old';
+
+// Mixins
+@import './base/mixins/typography';
+@import './base/mixins/media-queries';
+@import './base/mixins/icon-svg';
+@import './base/mixins/icon-svg';
+@import './base/mixins/browser-prefix-support';
+@import './base/mixins/mz-general';

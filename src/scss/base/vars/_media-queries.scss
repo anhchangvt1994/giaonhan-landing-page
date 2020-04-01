@@ -1,0 +1,18 @@
+/*
+  screen size for media queries responsive
+*/
+
+// ========================================================================
+// Bootstrap
+// ========================================================================
+// ---------------- Grid Size ----------------
+$screen-sm            : 592px;
+$screen-sm-min        : $screen-sm;
+$screen-md            : 752px; // 1024px 1152px
+$screen-md-min        : $screen-md;
+$screen-lg            : 992px;
+$screen-lg-min        : $screen-lg;
+$screen-xl            : 1280px;
+$screen-xl-min        : $screen-xl;
+$screen-xxl            : 1328px;
+$screen-xxl-min        : $screen-xxl;

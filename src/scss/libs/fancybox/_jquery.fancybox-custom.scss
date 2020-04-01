@@ -1,0 +1,58 @@
+.fancybox-is-open .fancybox-bg {
+  background: #000;
+  opacity: 0.9;
+}
+
+.fancybox-thumbs {
+  top: auto;
+  width: auto;
+  bottom: 0;
+  left: 0;
+  right : 0;
+  height: 70px;
+  padding: 5px 5px 0 5px;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.3);
+  text-align: center;
+
+  ul {
+    display: inline-block;
+    width: auto;
+
+    li {
+      width: 60px;
+      height: 60px;
+      display: table;
+      background-color: #fff;
+      background-position: center;
+      background-size: contain;
+      max-width: none!important;
+      max-height: none!important;
+      margin: 0 5px;
+
+      &::before {
+        border: 2px solid $mz-link-color;
+      }
+
+      .inner {
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+      }
+
+      img {
+        display: inline;
+        width: auto!important;
+        height: auto!important;
+        max-width: 54px;
+        max-height: 54px;
+        margin: 0!important;
+      }
+    }
+  }// ul
+}// .fancybox-thumbs
+
+.fancybox-show-thumbs .fancybox-inner {
+  right: 0;
+  bottom: 70px;
+}

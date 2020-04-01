@@ -1,0 +1,88 @@
+// ! Old variable deprecated
+// -----------------------------
+$old-text-color-light: #999;
+$old-text-color-red: #f44336;
+$old-text-color-green: #2c931d;
+
+// Price color
+$old-text-price-color-orange: #FF6F00;
+$old-text-price-color-green: #2c931d;
+
+$old-main-grd-color-red: #bd2a36;
+$old-main-grd-color-pink: #9b4599;
+$old-main-grd-color-blue: #214181;
+
+// Background color
+// ------------------------------------
+$old-body-bg-color: #ededed; // ! Màu này sẽ thay sau khi làm xong header/footer/chi tiết sản phẩm
+
+// Border color
+// ------------------------------------
+$old-border-color: #e1e1e1;
+
+// Border radius
+// ------------------------------------
+$old-border-radius: 4px; // ! Đụng rất nhiều trang cẩn thận hki replace
+
+// Margin size
+// ------------------------------------
+$old-block-margin-bottom: 40px;
+
+// Alert component color
+// ------------------------------------
+// warning
+$old-alert-warning-bg-color: #fdfbee;
+$old-alert-warning-border-color: #faebcc;
+$old-alert-warning-text-color: #8a6d3b;
+
+// warning-light
+$old-alert-warning-light-bg-color: #fffef9;
+$old-alert-warning-light-border-color: #ffe9b5;
+$old-alert-warning-light-text-color: #595959;
+
+// danger
+$old-alert-danger-bg-color: #f7ebeb;
+$old-alert-danger-border-color: #edd0d4;
+$old-alert-danger-text-color: #a94442;
+
+// success
+$old-alert-success-bg-color: #ebf6e7;
+$old-alert-success-border-color: #d8ebc9;
+$old-alert-success-text-color: #3c763d;
+
+// My button color
+// ------------------------------------
+$old-my-btn-default-bg-color: #eee;
+
+$old-my-btn-warning-bg-color: #e0a800;
+$old-my-btn-warning-text-color: $mz-text-base;
+
+$old-my-btn-orange-bg-color: #ff6f00;
+$old-my-btn-orange-text-color: #fff;
+
+// Product
+// ------------------------------------
+$old-product-box-countdown-bg-color: #f4f4f4;
+$old-product-box-countdown-text-color: #ff6f00;
+
+$old-product-box-sale-tag-bg-color: #ffdfc9;
+
+$old-product-box-meta-field-height: 30px;
+$old-product-box-meta-field-font-size: 11px;
+$old-product-box-meta-field-line-height: 13px;
+
+$old-product-box-title-font-size: 14px;
+$old-product-box-title-line-height: 18px;
+
+$old-product-box-curr-price-line-height: 22px;
+$old-product-box-curr-price-font-size: 16px;
+
+$old-product-box-old-price-font-size: 12px;
+
+
+// Screen size
+// -------------------
+$old-screen-hd-min: 1366px; // 1360px 1366px
+$old-screen-sxga-plus-min: 1400px; // 1400px 1440px
+$old-screen-hd-plus-min: 1600px; // 1600px 1680px
+$old-screen-fhd-min: 1800px;

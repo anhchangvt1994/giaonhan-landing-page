@@ -1,0 +1,24 @@
+/*
+! Lưu ý:
+- Cẩn thận thứ tự sắp xếp import các file, đặc biệt các file ở trên cùng
+*/
+
+// Base config
+@import './base-style';
+
+// Base Libs
+@import 'libs/bootstrap/bootstrap';
+
+// Fontawesome
+@import 'libs/fontawesome/brands';
+@import 'libs/fontawesome/light';
+@import 'libs/fontawesome/regular';
+@import 'libs/fontawesome/solid';
+@import 'libs/fontawesome/fontawesome';
+@import 'layouts/mz-container';
+@import 'layouts/common-icon-svg';
+
+// Layout
+@import 'layouts/fonts';
+@import 'layouts/font-awesome';
+@import 'layouts/reset';

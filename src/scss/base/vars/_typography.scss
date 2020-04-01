@@ -1,0 +1,109 @@
+// Text color
+$mz-text-base: $mz-gray-darker;
+$mz-text-mirnor: $mz-gray;
+$mz-text-disabled: $mz-gray-lighter;
+
+// Link color
+$mz-link-color: $mz-primary;
+$mz-link-color-hovered: $mz-primary-dark;
+$mz-link-color-focused: $mz-primary-darker;
+$mz-link-color-actived: $mz-primary-darker;
+
+// Font family
+$fa-font-path: '../fonts/fontawesome' !default; // Path to file Fontawesome 5
+$mz-font-family-fa5: 'Font Awesome 5 Pro';
+$mz-font-family-roboto: 'Roboto', 'Helvetica Neue', sans-serif;
+
+$mz-font-family-oswald: 'Oswald', 'Roboto', 'Helvetica Neue', sans-serif;
+$mz-font-family-helvetica-neue: 'Helvetica Neue', sans-serif;
+$mz-font-family-flow-rounded: 'flow rounded', 'Roboto', 'Helvetica Neue', sans-serif;
+$mz-font-family-apple-system: 'apple-system', 'BlinkMacSystemFont', 'Roboto', 'Helvetica Neue', sans-serif; // ! Sau khi làm xong trang chi tiết sản phẩm, nếu mọi thứ ổn thì chuyển sang font apple để test tiếp
+$mz-font-family-base: $mz-font-family-roboto;
+
+// Font size vs line height
+$mz-font-size-xs: 12px;
+$mz-line-height-xs: getLineHeightOfFontSize($mz-font-size-xs);
+
+$mz-font-size-sm: 13px;
+$mz-line-height-sm: getLineHeightOfFontSize($mz-font-size-sm);
+
+$mz-font-size-normal: 14px;
+$mz-line-height-normal: getLineHeightOfFontSize($mz-font-size-normal);
+
+$mz-font-size-md: 16px;
+$mz-line-height-md: getLineHeightOfFontSize($mz-font-size-md);
+
+$mz-font-size-lg: 18px;
+$mz-line-height-lg: getLineHeightOfFontSize($mz-font-size-lg);
+
+$mz-font-size-base: $mz-font-size-normal;
+$mz-line-height-base: $mz-line-height-normal;
+
+$mz-map-text-size : (
+  'xs' : (
+    'font-size' : $mz-font-size-xs,
+    'line-height' : $mz-line-height-xs,
+  ),
+  'sm' : (
+    'font-size' : $mz-font-size-sm,
+    'line-height' : $mz-line-height-sm,
+  ),
+  'normal' : (
+    'font-size' : $mz-font-size-normal,
+    'line-height' : $mz-line-height-normal,
+  ),
+  'md' : (
+    'font-size' : $mz-font-size-md,
+    'line-height' : $mz-line-height-md,
+  ),
+  'lg' : (
+    'font-size' : $mz-font-size-lg,
+    'line-height' : $mz-line-height-lg,
+  ),
+);
+
+// Font size vs line height cho heading
+$mz-h1-font-size: 32px;
+$mz-h1-line-height: getLineHeightOfFontSize($mz-h1-font-size);
+
+$mz-h2-font-size: 28px;
+$mz-h2-line-height: getLineHeightOfFontSize($mz-h2-font-size);
+
+$mz-h3-font-size: 24px;
+$mz-h3-line-height: getLineHeightOfFontSize($mz-h3-font-size);
+
+$mz-h4-font-size: 20px;
+$mz-h4-line-height: getLineHeightOfFontSize($mz-h4-font-size);
+
+$mz-h5-font-size: 18px;
+$mz-h5-line-height: getLineHeightOfFontSize($mz-h5-font-size);
+
+$mz-h6-font-size: 16px;
+$mz-h6-line-height: getLineHeightOfFontSize($mz-h6-font-size);
+
+$mz-map-heading-size: (
+  'h1' : (
+    'font-size' : $mz-h1-font-size,
+    'line-height' : $mz-h1-line-height,
+  ),
+  'h2' : (
+    'font-size' : $mz-h2-font-size,
+    'line-height' : $mz-h2-line-height,
+  ),
+  'h3' : (
+    'font-size' : $mz-h3-font-size,
+    'line-height' : $mz-h3-line-height,
+  ),
+  'h4' : (
+    'font-size' : $mz-h4-font-size,
+    'line-height' : $mz-h4-line-height,
+  ),
+  'h5' : (
+    'font-size' : $mz-h5-font-size,
+    'line-height' : $mz-h5-line-height,
+  ),
+  'h6' : (
+    'font-size' : $mz-h6-font-size,
+    'line-height' : $mz-h6-line-height,
+  ),
+);
