@@ -174,16 +174,13 @@
   }
 
   .mz-product-item {
-    flex: 0 0 134px;
-    max-width: 134px;
-    padding: 0;
-    margin-right: getSpacingFromBase(2.5);
+    padding: getSpacingFromBase(1) getSpacingFromBase(1.25);
 
     @include mq-md-up {
       margin-right: 0;
       max-width: none;
-      padding: getSpacingFromBase(1);
       @include mz-make-col(4);
+      padding: getSpacingFromBase(1) getSpacingFromBase(2);
     }
 
     @include mq-xl-up {
