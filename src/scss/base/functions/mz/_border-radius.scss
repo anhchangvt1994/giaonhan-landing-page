@@ -1,3 +1,12 @@
 @function getBorderRadiusFromBase($scale) {
-    @return $mz-border-radius-base * $scale;
+  @return $mz-border-radius-base * $scale;
+}
+
+@function mz-get-brd($_brd-size){
+  @if map-has-key($mz-map-brd, $_brd-size ){
+    @return map-get($mz-map-brd, $_brd-size );
   }
+  @else{
+    @error 'Border radius not in list: circle, round, xl, lg, md, sm, xs';
+  }
+}

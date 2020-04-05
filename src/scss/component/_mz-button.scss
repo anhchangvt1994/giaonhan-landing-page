@@ -1,0 +1,138 @@
+.mz-btn {
+  height: $mz-btn-form-height-default;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: $mz-brd-default;
+  border: 1px solid transparent;
+  background-color: transparent;
+  padding: 0 getSpacingFromBase(1.5);
+  text-align: center;
+  vertical-align: middle;
+  transition: $mz-transition-time-default;
+  font-size: $mz-font-size-normal;
+
+  &:hover {
+    @include mz-get-box-shadow-btn;
+  }
+  &:focus, &:active {
+    outline: none;
+  }
+  &.is-disable {
+    pointer-events: none;
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+  &__icon-col {
+    &:first-child {
+      margin-right: getSpacingFromBase(0.5);
+    }
+    &:last-child {
+      margin-left: getSpacingFromBase(0.5);
+    }
+  }
+}
+// .mz-btn
+// Generate button size and color
+$_arrMainColor: 'primary', 'secondary', 'info', 'success', 'warning', 'danger';
+$_arrBtnSize: 'xl', 'lg', 'md', 'sm', 'xs';
+$_arrBrdSize: 'circle', 'round', 'xl', 'lg', 'md', 'sm', 'xs';
+@each $_btnSize in $_arrBtnSize {
+  .mz-btn-#{$_btnSize} {
+    $font-size: mz-get-btn-font-size($_btnSize);
+    height: mz-get-height-button-form($_btnSize);
+    font-size: $font-size;
+    line-height: mz-get-line-height-from-font-size($font-size);
+    .mz-btn-icon {
+      padding-right: getSpacingFromBase(1);
+      font-size: mz-get-btn-icon-size($_btnSize);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &.mz-brd-circle {
+      width: mz-get-height-button-form($_btnSize);
+      padding: 0;
+      // margin:0;
+      box-shadow: 0 2px 4px 0 rgba(61, 63, 64, 0.2);
+      .mz-btn-icon {
+        padding-right: 0;
+      }
+    }
+  }
+}
+// Create boder radius class
+@each $_brdSize in $_arrBrdSize {
+  .mz-brd-#{$_brdSize} {
+    border-radius: mz-get-brd($_brdSize);
+  }
+}
+@each $_mainColorName in $_arrMainColor {
+  $_colorRoot: getColorInPaletteMap($_mainColorName, 'root');
+  $_colorDark: getColorInPaletteMap($_mainColorName, 'dark');
+  $_colorLight: getColorInPaletteMap($_mainColorName, 'light');
+  .mz-btn-#{$_mainColorName} {
+    background: $_colorRoot;
+    color: #ffffff;
+    &:hover {
+      @include mz-get-box-shadow-btn($_colorRoot)
+    }
+    &:hover, &:focus, &:active, &.is-active {
+      background: $_colorDark;
+      color: #ffffff;
+    }
+  }
+  .mz-btn-outline-#{$_mainColorName} {
+    @include mz-get-border-main-color($_mainColorName, 'root');
+    color: $_colorRoot;
+    &:hover, &:focus, &:active, &.is-active {
+      background: $_colorLight;
+      color: $_colorDark !important;
+    }
+  }
+}
+// Button light and outline light
+.mz-btn-light {
+  background: $mz-gray-lightest;
+  color: $mz-gray-root;
+  &:hover, &:focus, &:active {
+    background: $mz-gray-lighter;
+    color: #ffffff;
+  }
+}
+.mz-btn-outline-light {
+  border: 1px solid getColorInPaletteMap('gray','light');
+  color: $mz-gray-root;
+  &:hover, &:focus, &:active, &.is-active {
+    background: $mz-gray-lightest;
+  }
+}
+.mz-btn-white {
+  background: #ffffff;
+  color: $mz-primary-root !important;
+}
+.mz-btn-outline-white {
+  @include mz-get-border(#ffffff);
+  color: #ffffff;
+  &:hover {
+    background: #ffffff;
+    color: $mz-primary-root;
+  }
+}
+.mz-btn-circle-icon {
+  background: #ffffff;
+  border-radius: 50%;
+  border: unset;
+  box-shadow: unset;
+  outline: unset !important;
+  &:hover {
+    background: $mz-primary-root;
+    color: #ffffff;
+  }
+}
+.mz-btn-circle-icon .mz-btn-icon {
+  padding-right: 0;
+}
+.mz-btn-wide {
+  padding: 0 getSpacingFromBase(3);
+}

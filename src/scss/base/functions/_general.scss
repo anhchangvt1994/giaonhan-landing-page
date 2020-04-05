@@ -1,0 +1,29 @@
+@function mz-get-line-height-from-font-size($_font-size) {
+  @if not (is-absolute-length($_font-size)) {
+    @error '$_font-size: ' + $_font-size + ' is not valid';
+  }
+  $_line-height: floor($_font-size / 2) + $_font-size;
+  // Nếu line-height là số lẽ thì sẽ làm tròn xuống 1px
+  @if ($_line-height % 2 != 0) {
+    $_line-height: $_line-height - 1px;
+  }
+  @return $_line-height;
+}
+
+@function mz-get-height-button-form($_viewport-width){
+  @if map-has-key($mz-map-btn-form-height, $_viewport-width ){
+    @return map-get($mz-map-btn-form-height, $_viewport-width );
+  }
+  @else{
+    @error 'Viewport not in list: xl, lg, md, sm, xs';
+  }
+}
+
+@function mz-get-btn-font-size($_size-name){
+  @if map-has-key($mz-map-btn-font-size, $_size-name ){
+    @return map-get($mz-map-btn-font-size, $_size-name );
+  }
+  @else{
+    @error 'Font size name not in list: xl, lg, md, sm, xs';
+  }
+}

@@ -1,10 +1,9 @@
 import { WOW } from 'wowjs';
 import $ from 'jquery';
-// import { MyNoty } from '@jsBasePath/MyNoty';
-// import { formatAmazonUrlToFadoUrl, isAmazonUrl, getSearchResultPageUrl } from '@jsBasePath/UrlUtil';
-// import ProductPanelWrap from '@jsGlobalPath/product-panel-wrap';
 import '@fancyapps/fancybox';
 import { isEmpty as _isEmpty } from 'lodash';
+import Swiper from 'swiper';
+import '@jsLibsPath/bootstrap/modal';
 
 const amazonLandingPage = (()=> {
   const _setAnimateWhenScroll = () => {
@@ -31,50 +30,6 @@ const amazonLandingPage = (()=> {
       });
     });
   }; // end _setupScrollPage
-
-  /*
-    //! search Keyword
-    const _searchKeyword = () => {
-      const $elSearchForm = $('.amazon-search-form');
-
-      if($elSearchForm.length == 0) { return; }
-
-      $elSearchForm.on('submit', function(e) {
-        const strKeywords = e.target[0].value;
-        const $elSearchIcon = $($(e.target).find('.amazon-search-icon'));
-        if(e) {
-          e.preventDefault();
-        }
-
-        if(strKeywords == '') {
-          MyNoty.alert('Vui lòng nhập từ khóa trước khi tìm kiếm').show();
-          return;
-        }
-
-        setTimeout(() => {
-          $elSearchIcon.replaceWith('<i class="amazon-search-icon far fa-spinner fa-spin"></i>');
-          this.isLoadingRedirect = true;
-
-          if(isAmazonUrl(strKeywords)) {
-            let strFadoUrl = formatAmazonUrlToFadoUrl(strKeywords);
-
-            if(strFadoUrl) {
-              window.location.href = strFadoUrl;
-              return;
-            }
-          }
-
-          const strKeywordsSend = strKeywords.replace(/<\/?[^>]+(>|$)/g, '');
-
-          window.location.href = getSearchResultPageUrl({
-            rh: 'k:' + strKeywordsSend,
-            keywords: strKeywordsSend,
-            lptracking: 'muahangamazon',
-          });
-        },100);
-      });
-    }; // end _searchKeyword
-  */
 
   const _selectHotKey = () => {
     const $elHotTag = $('.head-mid-segment-tag-item');
@@ -231,7 +186,7 @@ const amazonLandingPage = (()=> {
 
   const _detectScrollPartDotWhenScroll = () => {
     const $elScrollPartDot = $('.scroll-pagination-dot-item');
-    const $elLastScrollPartDot = $elScrollPartDot.filter('[href="#fado-landing-footer-block"]');
+    const $elLastScrollPartDot = $elScrollPartDot.filter('[href="#footer-section"]');
 
     const __activeDotPagination = (strActiveCurrentId) => {
       $elScrollPartDot.removeClass('is-active');
@@ -275,19 +230,38 @@ const amazonLandingPage = (()=> {
         }
         else if(__isScrolledIntoView($('#trend-block'),false)) {
           __activeDotPagination('#trend-block');
+        } else if(__isScrolledIntoView($('#home-feedback-section'),false)) {
+          __activeDotPagination('#home-feedback-section');
         }
-        else if(__isScrolledIntoView($('#fado-landing-footer-block'),false)) {
-          __activeDotPagination('#fado-landing-footer-block');
+        else if(__isScrolledIntoView($('#footer-section'),false)) {
+          __activeDotPagination('#footer-section');
         }
       },100);
     });
   }; // end _detectScrollPartDotWhenScroll
 
+  const _setupFeedbackSectionSwiper = () => {
+    new Swiper('.home-feedback-slider', {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      spaceBetween: 16,
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        prevEl: '.home-feedback-prev',
+        nextEl: '.home-feedback-next',
+      },
+    });
+  }; // _setupFeedbackSectionSwiper()
+
   return {
     init() {
+      _setupFeedbackSectionSwiper();
       _setAnimateWhenScroll();
       _setupScrollPage();
-      // _searchKeyword();
       _selectHotKey();
       _generateFanpage();
       _setupDocumentClickEvent();

@@ -1,0 +1,35 @@
+.swiper-button-prev,.swiper-button-next{
+  &:focus{
+    outline: none;
+  }
+}
+.swiper-button-prev, .swiper-button-next{
+  background-image: none;
+  height:40px;
+  width: 40px;
+  z-index:1;
+  background: #ffffff;
+  background-image: none;
+  box-shadow: 0 16px 24px -8px rgba(61, 63, 64, 0.2);
+  border-radius: 50%;
+  font-size: 16px;
+  color:$mz-gray-root;
+  transition: $mz-transition-time-default;
+  opacity: 1;
+  @include display-flex(nowrap);
+  justify-content: center;
+  &:hover{
+    background:$mz-primary-root;
+    color:#ffffff;
+  }
+}
+.swiper-button-prev{
+  &:before{
+    @include mz-get-font-awesome-icon('\f053','light');
+  }
+}
+.swiper-button-next{
+  &:before{
+    @include mz-get-font-awesome-icon('\f054','light');
+  }
+}

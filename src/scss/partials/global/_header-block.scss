@@ -81,7 +81,7 @@
   @include mq-lg-up {
     display: flex;
     padding-bottom: getSpacingFromBase(14);
-    background: url('../images/main-graphic-large.png') no-repeat;
+    background: url('../images/main-graphic-large.svg') no-repeat;
     background-size: 480px auto;
     background-position: top getSpacingFromBase(6) left calc(((100vw - #{$mz-container-width-lg - ($mz-side-space-lg * 2)}) / 2) + 416px);
   }
@@ -249,8 +249,8 @@
     text-align: center;
     margin-bottom: getSpacingFromBase(1.625);
     letter-spacing: -1px;
-    max-width: 320px;
     margin: 0 auto getSpacingFromBase(0.5);
+    max-width: 245px;
 
     @include mq-sm-up {
       letter-spacing: normal;
@@ -323,7 +323,7 @@
     background: #fff;
     border: none;
     padding-left: getSpacingFromBase(5.75);
-    padding-right: getSpacingFromBase(10.625);
+    padding-right: getSpacingFromBase(10);
 
     @include placeholder {
       font-family: 'Roboto';
@@ -479,6 +479,23 @@
       padding: 0;
       padding-right: getSpacingFromBase(4);
     }
+
+    .head-bot-slogan {
+      margin-bottom: getSpacingFromBase(4);
+
+      @include getSizeOfText('md');
+      font-weight: 700;
+      font-stretch: condensed;
+      text-align: center;
+
+      @include mq-lg-up {
+        text-align: left;
+      }
+
+      @include mq-xl-up {
+        @include getSizeOfText('lg');
+      }
+    }
   }
 
   .head-bot-segment-intro-group {
@@ -555,6 +572,7 @@
     border: 1px solid getColorInPaletteMap('primary','lightest');
     border-radius: getBorderRadiusFromBase(4);
     background: #fff;
+    height: 100%;
     padding: getSpacingFromBase(3) getSpacingFromBase(1) getSpacingFromBase(2);
     @include box-shadow(0 16px 32px -16px rgba(getColorInPaletteMap('gray','light'), 0.4));
   }
@@ -575,11 +593,28 @@
     font-size: deep-map-get($mz-map-heading-size,'h1','font-size');
   }
 
+  .intro-panel-title,
+  .intro-panel-main-title {
+    @include getSizeOfText('xs');
+
+    @include mq-xl-up {
+      @include getSizeOfText('normal');
+    }
+  }
+
   .intro-panel-title {
     font-family: 'Roboto';
     font-stretch: condensed;
     text-align: center;
     color: getColorInPaletteMap('gray','dark');
+  }
+
+  .intro-panel-main-title {
+    font-family: 'Roboto';
+    font-stretch: condensed;
+    text-align: center;
+    color: getColorInPaletteMap('gray','dark');
+    font-weight: 600;
   }
 
   .block-foot {
@@ -628,7 +663,7 @@
       position: absolute;
       width: 100%;
       height: 277px;
-      background: url('../images/main-grp-globe.png') top center/100% auto no-repeat;
+      background: url('../images/main-grp-globe.svg') top center/100% auto no-repeat;
       left: 0;
       right: 0;
       top: 0;
@@ -648,7 +683,7 @@
       width: 72px;
       height: 72px;
       border-radius: 50%;
-      background: getColorInPaletteMap('secondary','light');
+      background: url('../images/circle-feature-bg.svg') center/cover no-repeat;
 
       &:nth-child(1) {
         top: getSpacingFromBase(6);
@@ -668,9 +703,9 @@
         }
 
         .globe-circle-arrow {
-          left: 1px;
+          left: 2px;
           top: -7px;
-          @include transform(rotate(55deg));
+          @include transform(rotate(45deg));
         }
       }
 
@@ -687,7 +722,7 @@
         .globe-circle-arrow {
           left: -14px;
           top: 28px;
-          @include transform(rotate(15deg));
+          @include transform(rotate(9deg));
         }
       }
 
@@ -701,7 +736,7 @@
 
         .globe-circle-arrow {
           left: -7px;
-          top: 52px;
+          top: 50px;
           @include transform(rotate(-32deg));
         }
       }
@@ -716,7 +751,7 @@
 
         .globe-circle-arrow {
           left: 19px;
-          top: 68px;
+          top: 67px;
           @include transform(rotate(-75deg));
         }
       }
@@ -748,7 +783,7 @@
       &:before {
         content: '';
         display: block;
-        border-left: 14px solid getColorInPaletteMap('secondary','light');
+        border-left: 14px solid $mz-primary;
         border-top: 10px solid transparent;
         border-bottom: 10px solid transparent;
       }
@@ -778,8 +813,6 @@
   }
 
   .foot-segment-img {
-    margin-top: -25%;
-
     @include mq-md-up {
       display: none;
     }
@@ -837,6 +870,7 @@
   .foot-segment-country-text {
     display: inline-block;
     margin-left: getSpacingFromBase(1);
+    white-space: nowrap;
   }
 
   .foot-segment-play-btn {

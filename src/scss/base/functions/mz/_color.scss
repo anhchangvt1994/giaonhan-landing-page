@@ -132,7 +132,7 @@ $mz-map-color-level-name: (
 
 @function getColorInPaletteMap($color-name, $color-level: 'root') {
   @if not map-has-key($mz-map-palette-color, $color-name) {
-    @error 'getColorInPaletteMap: $color-name not isset in palette map';
+    @error 'getColorInPaletteMap: ' + $color-name + ' not isset in palette map';
   }
 
   $map-color: map-get($mz-map-palette-color, $color-name); // get map color tương ứng với key trong list color palette map

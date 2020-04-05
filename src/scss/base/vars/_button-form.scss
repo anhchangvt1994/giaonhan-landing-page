@@ -1,0 +1,20 @@
+$mz-btn-form-height-default: 40px;
+$mz-btn-form-height-xl: 56px;
+$mz-btn-form-height-lg: 48px;
+$mz-btn-form-height-md: 40px;
+$mz-btn-form-height-sm: 32px;
+$mz-btn-form-height-xs: 26px;
+$mz-map-btn-form-height: (
+  'xl': $mz-btn-form-height-xl,
+  'lg': $mz-btn-form-height-lg,
+  'md': $mz-btn-form-height-md,
+  'sm': $mz-btn-form-height-sm,
+  'xs': $mz-btn-form-height-xs,
+);
+$mz-map-form-font-size-key: (
+  'xs' : 'xs',
+  'sm' : 'sm',
+  'md' : 'normal',
+  'lg' : 'normal',
+  'xl' : 'md',
+);

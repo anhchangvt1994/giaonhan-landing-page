@@ -29,3 +29,23 @@ $mz-space-base: 8px; // ! Sử dụng này rồi nhân lên * x để lấy số
 // Border radius
 // -------------------
 $mz-border-radius-base: 2px;
+
+$mz-brd-default: 4px;
+$mz-brd-xs: 4px;
+$mz-brd-sm: 6px;
+$mz-brd-md: 8px;
+$mz-brd-lg: 10px;
+$mz-brd-xl: 12px;
+$mz-brd-round: 28px;
+$mz-brd-circle: 50%;
+$mz-map-brd: (
+  'xs': $mz-brd-xs,
+  'sm': $mz-brd-sm,
+  'md': $mz-brd-md,
+  'lg': $mz-brd-lg,
+  'xl': $mz-brd-xl,
+  'round': $mz-brd-round,
+  'circle': $mz-brd-circle,
+);
+$mz-images-url: '../image';
+$ratio-169-percent: 56.25%;

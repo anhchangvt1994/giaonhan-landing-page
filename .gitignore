@@ -1,2 +1,11 @@
+.sass-cache
+.vscode/launch.json
+node_modules
+tmp
+temp
+composer
+composer.lock
+log
+docs_site
 tmp
 dist

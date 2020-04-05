@@ -8,6 +8,8 @@
 
 // Base Libs
 @import 'libs/bootstrap/bootstrap';
+@import 'libs/swiper/swiper.scss';
+@import 'libs/swiper/swiper-custom.scss';
 
 // Fontawesome
 @import 'libs/fontawesome/brands';
@@ -17,6 +19,12 @@
 @import 'libs/fontawesome/fontawesome';
 @import 'layouts/mz-container';
 @import 'layouts/common-icon-svg';
+
+// Component
+@import 'component/mz-button';
+@import 'component/mz-product';
+@import 'component/mz-form';
+@import 'component/mz-modal';
 
 // Layout
 @import 'layouts/fonts';

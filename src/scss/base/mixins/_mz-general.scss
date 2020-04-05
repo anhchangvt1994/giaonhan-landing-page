@@ -50,8 +50,118 @@
   flex: 0 0 percentage($int-col-amount/$_int-total-col);
 }
 
+@mixin mz-make-col-custom($_percent-rate){
+  flex: 0 0 $_percent-rate;
+  max-width: $_percent-rate;
+}
+
 @mixin mz-get-font-awesome-icon($_codeFont,$_fontWeightName){
   content:'' + $_codeFont;
   font-family: $mz-font-family-fa5;
   font-weight: mz-get-font-awesome-weight($_fontWeightName);
+}
+
+@mixin mz-position-center{
+  position: absolute;
+  content: "";
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+
+@mixin mz-position-center-x{
+  position: absolute;
+  content: "";
+  left:50%;
+  transform: translateX(-50%);
+}
+@mixin mz-position-center-y{
+  position: absolute;
+  content: "";
+  top:50%;
+  transform: translateY(-50%);
+}
+
+$_viewport-map: (
+  'xs': 375px,
+  'sm': $screen-sm-min,
+  'md': $screen-md-min,
+  'lg': $screen-lg-min,
+  'xl': $screen-lg-min,
+);
+@mixin mz-get-box-shadow($_viewport-size:'xs',$_box-shadow-color:rgba(61, 63, 64, 0.1)) {
+  @if not map-has-key($_viewport-map, $_viewport-size ){
+    @error 'List viewport size: xl, lg, md, sm, xs';
+  }
+  @if($_viewport-size == 'lg' or $_viewport-size == 'xl'){
+    box-shadow: 0 16px 24px -16px $_box-shadow-color;
+  }
+  @if($_viewport-size == 'md'){
+    box-shadow: 0 16px 24px -8px $_box-shadow-color;
+  }
+  @if($_viewport-size == 'sm'){
+    box-shadow: 0 8px 16px -4px $_box-shadow-color;
+  }
+  @if($_viewport-size == 'xs'){
+    box-shadow: 0 2px 4px 0 $_box-shadow-color;
+  }
+}
+
+@mixin mz-get-box-shadow-btn($_box-shadow-btn-color:rgba(61, 63, 64, 0.1)) {
+  box-shadow: 0 16px 24px -16px $_box-shadow-btn-color;
+}
+
+// mz-get-border-main-color
+// mz-get-border-partial
+@mixin mz-get-border-bottom($_hex-color){
+  border-bottom: solid 1px $_hex-color;
+}
+@mixin mz-get-border-top($_hex-color){
+  border-top: solid 1px $_hex-color;
+}
+@mixin mz-get-border-left($_hex-color){
+  border-left: solid 1px $_hex-color;
+}
+@mixin mz-get-border-right($_hex-color){
+  border-right: solid 1px $_hex-color;
+}
+
+@mixin mz-get-border-main-color($_boderColorName,$_boderColorLevel){
+  $_hex-main-color: getColorInPaletteMap($_boderColorName,$_boderColorLevel);
+  @include mz-get-border-top($_hex-main-color);
+  @include mz-get-border-bottom($_hex-main-color);
+  @include mz-get-border-left($_hex-main-color);
+  @include mz-get-border-right($_hex-main-color);
+}
+// mz-get-border-gray-color
+@mixin mz-get-border-gray-color($_boderGrayLevel){
+  $_hex-gray-color: getColorInPaletteMap('gray', $_boderGrayLevel);
+  @include mz-get-border-top($_hex-gray-color);
+  @include mz-get-border-bottom($_hex-gray-color);
+  @include mz-get-border-left($_hex-gray-color);
+  @include mz-get-border-right($_hex-gray-color);
+}
+
+// mz-get-border
+@mixin mz-get-border($_hex-color){
+  @include mz-get-border-top($_hex-color);
+  @include mz-get-border-bottom($_hex-color);
+  @include mz-get-border-left($_hex-color);
+  @include mz-get-border-right($_hex-color);
+}
+
+@mixin display-flex($_wrap:wrap) {
+  display: flex;
+  flex-wrap:$_wrap;
+  align-items: center;
+}
+
+@mixin mz-hide-scrollbar() {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@mixin mz-smooth-scroll() {
+  -webkit-overflow-scrolling: touch; // ! giúp cho khi vuốt chạm sẽ smooth hơn
 }

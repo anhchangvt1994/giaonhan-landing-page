@@ -1,0 +1,181 @@
+.mz-modal-dialog{
+  position: relative;
+  display: flex;
+  pointer-events: none;
+  margin: getSpacingFromBase(1) auto;
+  max-width: none;
+  justify-content: center;
+
+  @include mq-md-up {
+    margin: getSpacingFromBase(2) auto;
+  }
+
+  @include mq-lg-up {
+    margin: getSpacingFromBase(3) auto;
+  }
+}
+.mz-modal-content{
+  pointer-events: auto;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: getSpacingFromBase(1);
+  width: auto;
+  max-width: calc(100% - 16px);
+  @include mq-md-up {
+    max-width: 700px;
+    padding: getSpacingFromBase(2) getSpacingFromBase(2) getSpacingFromBase(1);
+  }
+  @include mq-lg-up {
+    max-width: 900px;
+    padding: getSpacingFromBase(3) getSpacingFromBase(3) getSpacingFromBase(1);
+  }
+  @include mq-xl-up {
+    padding: getSpacingFromBase(4) getSpacingFromBase(4) getSpacingFromBase(1);
+  }
+}
+.mz-modal-head, .mz-modal-body, .mz-modal-footer{
+  margin-bottom: getSpacingFromBase(1);
+
+  @include mq-md-up {
+    margin-bottom: getSpacingFromBase(2);
+  }
+  @include mq-xl-up {
+    margin-bottom: getSpacingFromBase(3);
+  }
+}
+.mz-modal-title{
+  @include getSizeOfText(18px);
+  font-weight: bold;
+  text-align: center;
+  padding: 0 getSpacingFromBase(3);
+  @include mq-md-up {
+    @include getSizeOfText(22px);
+  }
+  @include mq-lg-up {
+    @include getSizeOfText(26px);
+    padding: 0 getSpacingFromBase(4);
+  }
+  @include mq-xl-up {
+    @include getSizeOfText(32px);
+  }
+}
+.mz-modal-close-button-row{
+  text-align: right;
+}
+.mz-modal-close-top{
+  float: unset;
+  font-size: 24px;
+  outline: unset!important;
+  transition: $mz-transition-time-default;
+  @include mq-lg-up {
+    font-size: 32px;
+  }
+}
+.mz-modal-button-row{
+  display: flex;
+  justify-content: center;
+  button{
+    margin-right: getSpacingFromBase(2);
+    min-width: 110px;
+    &:last-child{
+      margin-right: 0;
+    }
+  }
+}
+.mz-modal-big-img{
+  margin-bottom: getSpacingFromBase(2);
+  @include mq-md-up {
+    margin-bottom: getSpacingFromBase(3);
+  }
+}
+.mz-modal-big-text{
+  @include getSizeOfText(20px);
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: getSpacingFromBase(.5);
+  @include mq-md-up {
+    @include getSizeOfText(24px);
+    margin-bottom: getSpacingFromBase(1);
+  }
+  @include mq-lg-up {
+    @include getSizeOfText(28px);
+  }
+  @include mq-xxl-up {
+    @include getSizeOfText(32px);
+    margin-bottom: getSpacingFromBase(2);
+  }
+}
+.mz-modal-medium-text{
+  @include getSizeOfText(14px);
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: getSpacingFromBase(.5);
+  @include mq-md-up {
+    @include getSizeOfText(18px);
+    margin-bottom: getSpacingFromBase(1);
+  }
+  @include mq-lg-up {
+    @include getSizeOfText(22px);
+  }
+  @include mq-xxl-up {
+    @include getSizeOfText(26px);
+    margin-bottom: getSpacingFromBase(2);
+  }
+}
+.mz-modal-row{
+  margin-bottom: getSpacingFromBase(0.5);
+  @include mq-md-up {
+    margin-bottom: getSpacingFromBase(1);
+  }
+}
+//##############################################################################
+//################################################################
+//################# Modal alert #################
+.mz-modal-alert{
+  position: relative;
+  min-width: 300px;
+  padding: getSpacingFromBase(2) getSpacingFromBase(2) getSpacingFromBase(1);
+  @include mq-sm-up {
+    max-width: 400px;
+  }
+  @include mq-md-up {
+    padding: getSpacingFromBase(3) getSpacingFromBase(3) getSpacingFromBase(1);
+    min-width: 400px;
+    max-width: 500px;
+  }
+  @include mq-lg-up {
+    padding: getSpacingFromBase(4) getSpacingFromBase(4) getSpacingFromBase(1);
+    min-width: 500px;
+    max-width: 600px;
+  }
+}
+//################# Modal alert #################
+//################################################################
+//##############################################################################
+//################################################################################
+//################################################################
+//################# Modal form #################
+.mz-modal-form{
+  width: 100%;
+  @include mq-sm-up {
+    max-width: 400px;
+  }
+  @include mq-md-up {
+    max-width: 560px;
+  }
+  @include mq-xl-up {
+    max-width: 700px;
+  }
+  .mz-form-item{
+    @include mq-md-down {
+      padding-bottom: getSpacingFromBase(2);
+    }
+  }
+  .mz-form-control-label{
+    @include getSizeOfText(14px);
+    font-weight: bold;
+  }
+}
+//################# Modal form #################
+//################################################################
+//################################################################################

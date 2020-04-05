@@ -107,3 +107,58 @@ $mz-map-heading-size: (
     'line-height' : $mz-h6-line-height,
   ),
 );
+
+// Font size for star rating
+// -------------------
+$mz-icon-font-size-xs: 10px;
+$mz-icon-font-size-sm: 12px;
+$mz-icon-font-size-md: 16px;
+$mz-icon-font-size-lg: 24px;
+$mz-icon-font-size-xl: 32px;
+$mz-map-icon-font-size: (
+  'xs': $mz-icon-font-size-xs,
+  'sm': $mz-icon-font-size-sm,
+  'md': $mz-icon-font-size-md,
+  'lg': $mz-icon-font-size-lg,
+  'xl': $mz-icon-font-size-xl,
+);
+// Font size / line height for button, form
+// -------------------
+$mz-btn-font-size-xl: 16px;
+$mz-btn-font-size-lg: 14px;
+$mz-btn-font-size-md: 14px;
+$mz-btn-font-size-sm: 13px;
+$mz-btn-font-size-xs: 12px;
+$mz-btn-font-size-default: 14px;
+
+$mz-map-btn-font-size: (
+  'xl':$mz-btn-font-size-xl,
+  'lg':$mz-btn-font-size-lg,
+  'md':$mz-btn-font-size-md,
+  'sm':$mz-btn-font-size-sm,
+  'xs':$mz-btn-font-size-xs,
+  'default':$mz-btn-font-size-default,
+);
+// Font size / line height for button, form
+// -------------------
+$mz-btn-icon-size-xl: 20px;
+$mz-btn-icon-size-lg: 18px;
+$mz-btn-icon-size-md: 14px;
+$mz-btn-icon-size-sm: 13px;
+$mz-btn-icon-size-xs: 12px;
+$mz-btn-icon-size-default: 14px;
+
+$mz-map-btn-icon-size: (
+  'xl':$mz-btn-icon-size-xl,
+  'lg':$mz-btn-icon-size-lg,
+  'md':$mz-btn-icon-size-md,
+  'sm':$mz-btn-icon-size-sm,
+  'xs':$mz-btn-icon-size-xs,
+  'default':$mz-btn-icon-size-default,
+);
+
+$mz-font-awesome-map-weight: (
+  'light': 300,
+  'regular':400,
+  'solid':900,
+);

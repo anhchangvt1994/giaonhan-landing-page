@@ -1,0 +1,191 @@
+.mz-col-2-10{
+  flex: 0 0 20%;
+  max-width: 20%;
+}
+.mz-product-wrap{
+  display: flex;
+  padding: getSpacingFromBase(5) 0;
+  margin:0 getSpacingFromBase(-1);
+  @include mq-lg-up{
+    margin:0 getSpacingFromBase(-2);
+  }
+}
+.mz-product-item{
+  padding: getSpacingFromBase(1);
+  margin-bottom: getSpacingFromBase(2.5);
+  color:$mz-gray-root;
+  transition: $mz-transition-time-default;
+  @include mz-make-col(6);
+  @include mq-md-up{
+    @include mz-make-col(4);
+  }
+  @include mq-lg-up{
+    @include mz-make-col-custom(20%);
+    padding: getSpacingFromBase(2);
+  }
+}
+.mz-product-item-inner{
+  background: #ffffff;
+}
+//============================ Product top ============================//
+//=====================================================================//
+.mz-product-top{
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #ffffff;
+  margin-bottom: getSpacingFromBase(1);
+
+  &:before {
+    display: block;
+    content: "";
+    padding-bottom: 100%;
+  }
+}
+.mz-product-top a{
+  @include getSizeOfText(14px);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mz-product-image{
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+.mz-product-sale-tag{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  border-radius: 3px;
+  background: $mz-danger-root;
+  color: #ffffff;
+  padding: 2px 6px;
+}
+//=========================================================================//
+//============================ end Product top ============================//
+//============================ Product body ===========================//
+//=====================================================================//
+.mz-product-title{
+  margin-bottom: getSpacingFromBase(1);
+}
+.mz-product-title-link{
+  @include mz-limit-text-line(14px,2);
+  height: mz-get-line-height-from-font-size(14px) * 2;
+  transition: $mz-transition-time-default;
+  color: $mz-gray-root;
+}
+//========= Rating =========//
+.mz-product-rating{
+  display: flex;
+  margin:0;
+  align-items: center;
+  @include getSizeOfText(10px);
+  color:$mz-gray-lighter;
+  i{
+    padding-right:getSpacingFromBase(0.25);
+  }
+}
+.is-star-on{
+  color: $mz-warning-dark;
+}
+.mz-product-review-total{
+  color:$mz-gray-light;
+}
+//========= end Rating =========//
+//========= Country =========//
+.mz-product-country{
+  display: flex;
+  margin:0;
+  align-items: center;
+}
+.mz-product-country-name{
+  @include getSizeOfText(12px);
+  color:$mz-gray-root;
+}
+.mz-product-country-flag{
+  padding-left:getSpacingFromBase(1);
+}
+.mz-product-country-flag-img{
+  width: 100%;
+  max-width: 16px;
+  max-height: 16px;
+}
+//========= end Country =========//
+//========= Price =========//
+.mz-product-price{
+  display: flex;
+  margin:0;
+  font-family: $mz-font-family-oswald;
+  @include getSizeOfText(16px);
+  font-weight: bold;
+  color: $mz-warning-dark;
+  align-items: center;
+  margin-bottom: getSpacingFromBase(1);
+  height: 26px;
+}
+.mz-product-price-before{
+  @include getSizeOfText(12px);
+  font-weight: normal;
+  color: $mz-gray-lighter;
+  text-decoration: line-through;
+  padding-left: getSpacingFromBase(1);
+}
+//========= end Price =========//
+//========= Button =========//
+.mz-product-button{
+  padding: getSpacingFromBase(1) getSpacingFromBase(1.5);
+  height: getSpacingFromBase(4.25);
+  background: transparent;
+  transition: $mz-transition-time-default;
+}
+.mz-product-button-icon{
+  padding-right: getSpacingFromBase(0.5);
+}
+.mz-btn-add-to-cart{
+  border:solid 1px $mz-primary-root;
+  color:$mz-primary-root;
+}
+.mz-btn-quick-view{
+  border:solid 1px $mz-gray-lighter;
+  color: $mz-gray-lighter;
+}
+//========= end Button =========//
+//============================ end Product body =======================//
+//=====================================================================//
+//=====================================================================//
+//============================ Hover item =======================//
+.mz-product-item{
+  &:hover{
+    .mz-product-title-link{
+      color: $mz-primary-root;
+    }
+    .mz-btn-add-to-cart{
+      background: $mz-primary-root;
+      color:#ffffff;
+      border-color: transparent;
+    }
+  }
+}
+//============================ end Hover item =======================//
+//=====================================================================//
+.mz-product-info-row{
+  margin:0;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: getSpacingFromBase(1);
+  &:last-child{
+    margin: 0;
+  }
+}
+.swiper-slide{
+  .mz-product-item{
+    @include mz-make-col(12);
+  }
+}
