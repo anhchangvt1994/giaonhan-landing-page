@@ -580,7 +580,7 @@
 
   .segment-intro-panel-inner {
     position: relative;
-    border: 1px solid getColorInPaletteMap('primary','lighter');
+    border: 1px solid getColorInPaletteMap('primary','light');
     border-radius: getBorderRadiusFromBase(4);
     background: #fff;
     height: 100%;
@@ -592,7 +592,7 @@
     position: absolute;
     width: 100%;
     text-align: center;
-    color: getColorInPaletteMap('primary','lighter');
+    color: getColorInPaletteMap('primary','light');
     left: 0;
     top: -1 * getSpacingFromBase(4) / 2;
   }
@@ -617,14 +617,14 @@
     font-family: 'Roboto';
     font-stretch: condensed;
     text-align: center;
-    color: getColorInPaletteMap('gray','dark');
+    color: getColorInPaletteMap('gray','darker');
   }
 
   .intro-panel-main-title {
     font-family: 'Roboto';
     font-stretch: condensed;
     text-align: center;
-    color: getColorInPaletteMap('gray','dark');
+    color: getColorInPaletteMap('gray','darker');
     font-weight: 600;
   }
 

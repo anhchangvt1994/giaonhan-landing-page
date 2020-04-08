@@ -152,7 +152,7 @@
             </h1>
 
             <div class="head-mid-segment-content">
-              Giaonhan247- Giải pháp toàn diện giúp mua hộ hàng từ Amazon Mỹ, Đức, Nhật, Anh, Úc… Chi phí cạnh tranh, đa tiện ích, hỗ trợ mua hàng amazon nhanh chóng và đơn giản nhất.
+              Giaonhan247- Giải pháp toàn diện giúp mua hộ hàng từ Amazon Mỹ, Đức, Nhật, Anh, Úc… Chi phí cạnh tranh, đa tiện ích, hỗ trợ mua hàng Amazon nhanh chóng và đơn giản nhất.
             </div>
 
             <div class="head-mid-segment-slogan">
@@ -346,12 +346,6 @@
           'title'          => 'Nhập khẩu chính ngạch, minh bạch nguồn gốc - Cung cấp hóa đơn VAT cho doanh nghiệp',
           'content'        => ' Hỗ trợ cá nhân/ Doanh nghiệp giao dịch nhập khẩu trực tiếp với người bán nước ngoài, cung cấp hóa đơn VAT cho doanh nghiệp.',
           'imageUrl'       => $staticImgUrl . '/svg/intro-block/icon-official-import.svg',
-          'is-none-border' => false,
-        ],
-        [
-          'title'          => 'Đảm bảo giao dịch. Hỗ trợ đổi trả dễ dàng.',
-          'content'        => 'Sàn Fado đảm bảo giao dịch, hỗ trợ khiếu nại với người bán, đổi trả xuyên biên giới dễ dàng, bảo vệ người mua.',
-          'imageUrl'       => $staticImgUrl . '/svg/intro-block/icon-exchange-easy.svg',
           'is-none-border' => false,
         ],
         [
