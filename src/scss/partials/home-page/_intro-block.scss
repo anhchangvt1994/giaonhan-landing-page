@@ -749,10 +749,17 @@
     padding-right: getSpacingFromBase(10.625);
 
     @include placeholder {
+      transition: $mz-transition-time-default;
       font-family: 'Roboto';
       font-stretch: condensed;
       font-weight: 700;
-      color: getColorInPaletteMap('gray','root');
+      color: getColorInPaletteMap('gray','lighter');
+    }
+
+    &:focus {
+      @include placeholder {
+        color: getColorInPaletteMap('gray','light');
+      }
     }
   }
 

@@ -83,13 +83,13 @@
     padding-bottom: getSpacingFromBase(14);
     background: url('../images/main-graphic-large.svg') no-repeat;
     background-size: 480px auto;
-    background-position: top getSpacingFromBase(6) left calc(((100vw - #{$mz-container-width-lg - ($mz-side-space-lg * 2)}) / 2) + 416px);
+    background-position: top getSpacingFromBase(7) left calc(((100vw - #{$mz-container-width-lg - ($mz-side-space-lg * 2)}) / 2) + 416px);
   }
 
   @include mq-xl-up {
     background-size: 696px auto;
     padding-bottom: getSpacingFromBase(18);
-    background-position: bottom getSpacingFromBase(18.5) left calc(((100vw - #{$mz-container-width-xl - ($mz-side-space-lg * 2)}) / 2) + 536px);
+    background-position: bottom getSpacingFromBase(28) left calc(((100vw - #{$mz-container-width-xl - ($mz-side-space-lg * 2)}) / 2) + 536px);
   }
 
   .mz-container {
@@ -326,10 +326,17 @@
     padding-right: getSpacingFromBase(10);
 
     @include placeholder {
+      transition: $mz-transition-time-default;
       font-family: 'Roboto';
       font-stretch: condensed;
       font-weight: 700;
-      color: getColorInPaletteMap('gray','root');
+      color: getColorInPaletteMap('gray','lighter');
+    }
+
+    &:focus {
+      @include placeholder {
+        color: getColorInPaletteMap('gray','light');
+      }
     }
   }
 
@@ -569,7 +576,7 @@
 
   .segment-intro-panel-inner {
     position: relative;
-    border: 1px solid getColorInPaletteMap('primary','lightest');
+    border: 1px solid getColorInPaletteMap('primary','lighter');
     border-radius: getBorderRadiusFromBase(4);
     background: #fff;
     height: 100%;
@@ -800,7 +807,7 @@
       max-width: 696px;
       padding-bottom: getSpacingFromBase(18);
       height: 736px;
-      background: url('../images/main-graphic-large.png') bottom center/100% auto no-repeat;
+      background: url('../images/main-graphic-large.svg') bottom getSpacingFromBase(3) center/100% auto no-repeat;
     }
 
     @include mq-lg-up {

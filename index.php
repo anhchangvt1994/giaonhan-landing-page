@@ -109,22 +109,22 @@
           'introPanelTitle' => 'Bảo hiểm 100%',
         ],
         [
-          'introPanelIcon'  => '<i class="intro-panel-icon fal fa-box-check"></i>',
+          'introPanelIcon'  => '<i class="intro-panel-icon fal fa-flag-usa"></i>',
           'introPanelMainTitle' => 'Miễn thuế bang Mỹ',
           'introPanelTitle' => 'Tax 0%',
         ],
         [
-          'introPanelIcon'  => '<i class="intro-panel-icon fal fa-map-marked-alt"></i>',
+          'introPanelIcon'  => '<i class="intro-panel-icon fal fa-sync"></i>',
           'introPanelMainTitle' => 'Hỗ trợ đổi trả',
           'introPanelTitle' => 'Chính sách',
         ],
         [
-          'introPanelIcon'  => '<i class="intro-panel-icon fal fa-shield-check"></i>',
+          'introPanelIcon'  => '<i class="intro-panel-icon fal fa-file-invoice-dollar"></i>',
           'introPanelMainTitle' => 'Thanh toán linh hoạt',
           'introPanelTitle' => 'Chỉ từ 50%',
         ],
         [
-          'introPanelIcon'  => '<i class="intro-panel-icon fal fa-globe-stand"></i>',
+          'introPanelIcon'  => '<i class="intro-panel-icon fal fa-box-check"></i>',
           'introPanelMainTitle' => 'Nhập khẩu chính ngạch',
           'introPanelTitle' => 'Cung cấp hóa đơn cho DN',
         ],
@@ -365,7 +365,7 @@
           'content'        => 'Đội ngũ tư vấn sẽ cung cấp, giải đáp thông tin chính xác khi mua hàng. Hỗ trợ khách hàng liên hệ với seller để kiểm tra thông tin sản phẩm trước khi khách hàng quyết định tiến hành thanh toán.',
           'imageUrl'       => $staticImgUrl . '/svg/intro-block/icon-professional-advice.svg',
           'is-none-border' => false,
-          'is-last'        => true,
+          'is-last'        => false,
         ],
         [
           'title'          => 'Đàm phán thương lượng giá tốt',
