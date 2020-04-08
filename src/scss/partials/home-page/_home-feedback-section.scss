@@ -218,7 +218,17 @@
 
 .home-feedback-info-user-rating{
   font-size:12px;
-}
+
+  .fa-star {
+    &.is-star-on {
+      color: $mz-warning-dark;
+    }
+
+    &.is-star-off {
+      color: $mz-gray-lightest;
+    }
+  }
+} // .home-feedback-info-user-rating
 
 .feedback-slide-item{
   padding:getSpacingFromBase(4);

@@ -7,6 +7,10 @@
     box-shadow: 0 0 0 35px rgba(getColorInPaletteMap('primary','lighter'), 0);
   }
 }
+.text-center {
+  text-align: center;
+}
+
 .scroll-pagination-dot-list {
   display: none;
   @include mq-lg-up {
@@ -83,13 +87,13 @@
     padding-bottom: getSpacingFromBase(14);
     background: url('../images/main-graphic-large.svg') no-repeat;
     background-size: 480px auto;
-    background-position: top getSpacingFromBase(7) left calc(((100vw - #{$mz-container-width-lg - ($mz-side-space-lg * 2)}) / 2) + 416px);
+    background-position: top getSpacingFromBase(8) left calc(((100vw - #{$mz-container-width-lg - ($mz-side-space-lg * 2)}) / 2) + 416px);
   }
 
   @include mq-xl-up {
     background-size: 696px auto;
     padding-bottom: getSpacingFromBase(18);
-    background-position: bottom getSpacingFromBase(28) left calc(((100vw - #{$mz-container-width-xl - ($mz-side-space-lg * 2)}) / 2) + 536px);
+    background-position: bottom getSpacingFromBase(25) left calc(((100vw - #{$mz-container-width-xl - ($mz-side-space-lg * 2)}) / 2) + 536px);
   }
 
   .mz-container {
@@ -697,7 +701,7 @@
         left: -1 * (getSpacingFromBase(9) / 2);
 
         .globe-circle-title {
-          left: -1 * getSpacingFromBase(9);
+          left: -1 * getSpacingFromBase(8);
         }
       }
 
@@ -738,7 +742,7 @@
         right: getSpacingFromBase(4);
 
         .globe-circle-title {
-          right: -1 * getSpacingFromBase(12.5);
+          right: -1 * getSpacingFromBase(13);
         }
 
         .globe-circle-arrow {
@@ -753,7 +757,7 @@
         right: -1 * (getSpacingFromBase(9) / 2);
 
         .globe-circle-title {
-          right: -1 * getSpacingFromBase(10);
+          right: -1 * getSpacingFromBase(9.5);
         }
 
         .globe-circle-arrow {
@@ -840,12 +844,12 @@
       width: auto;
       justify-content: flex-start;
       margin: 0;
-      bottom: getSpacingFromBase(15);
+      bottom: getSpacingFromBase(17);
       right: 0;
     }
 
     @include mq-xl-up {
-      bottom: -1 * getSpacingFromBase(5);
+      bottom: -1 * getSpacingFromBase(3);
       right: 0;
     }
   }

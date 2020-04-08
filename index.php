@@ -240,26 +240,26 @@
           <div class="foot-segment-globe-bg">
             <div class="main-globe-bg wow fadeIn">
               <div class="globe-circle-item  wow fadeIn" data-wow-delay='0.5s'>
-                <span class="globe-circle-title">CHỌN<br class="is-break"/> SẢN PHẨM</span>
+                <span class="globe-circle-title">Chọn<br class="is-break"/>sản Phẩm</span>
                 <i class="globe-circle-icon fal fa-tasks"></i>
               </div>
               <div class="globe-circle-item wow fadeIn" data-wow-delay='1.5s'>
-                <span class="globe-circle-title">BỎ VÀO GIỎ HÀNG</span>
+                <span class="globe-circle-title">Thêm vào giỏ hàng</span>
                 <i class="globe-circle-arrow"></i>
                 <i class="globe-circle-icon fal fa-cart-arrow-down"></i>
               </div>
-              <div class="globe-circle-item wow fadeIn" data-wow-delay='2.5s'>
-                <span class="globe-circle-title">KIỂM TRA & THANH TOÁN</span>
+              <div class="globe-circle-item text-center wow fadeIn" data-wow-delay='2.5s'>
+                <span class="globe-circle-title">Gửi yêu cầu - nhận báo giá<br>Thanh toán ngay khi mua tại Amazon</span>
                 <i class="globe-circle-arrow"></i>
                 <i class="globe-circle-icon fal fa-hand-holding-usd"></i>
               </div>
               <div class="globe-circle-item wow fadeIn" data-wow-delay='3.5s'>
-                <span class="globe-circle-title">CHUYỂN HÀNG</span>
+                <span class="globe-circle-title">Giaonhan247<br>mua và ship hàng</span>
                 <i class="globe-circle-arrow"></i>
                 <i class="globe-circle-icon fal fa-shipping-fast"></i>
               </div>
               <div class="globe-circle-item wow fadeIn" data-wow-delay='4.5s'>
-                <span class="globe-circle-title">NHẬN HÀNG</span>
+                <span class="globe-circle-title">Chờ<br>nhận hàng</span>
                 <i class="globe-circle-arrow"></i>
                 <i class="globe-circle-icon fal fa-box-check"></i>
               </div>
