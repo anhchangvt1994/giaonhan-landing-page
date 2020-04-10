@@ -578,8 +578,17 @@
     }
   }
 
+  a.head-bot-segment-intro-panel {
+    &:hover {
+      .segment-intro-panel-inner {
+        @include box-shadow(0 16px 32px -16px rgba($mz-primary, 0.4));
+      }
+    }
+  }
+
   .segment-intro-panel-inner {
     position: relative;
+    transition: $mz-transition-time-default;
     border: 1px solid getColorInPaletteMap('primary','light');
     border-radius: getBorderRadiusFromBase(4);
     background: #fff;

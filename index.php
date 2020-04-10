@@ -117,6 +117,7 @@
           'introPanelIcon'  => '<i class="intro-panel-icon fal fa-sync"></i>',
           'introPanelMainTitle' => 'Hỗ trợ đổi trả',
           'introPanelTitle' => 'Chính sách',
+          'introPanelUrl' => 'https://www.giaonhan247.com/bai-viet/quy-dinh-doi-tra-hang-hoa',
         ],
         [
           'introPanelIcon'  => '<i class="intro-panel-icon fal fa-file-invoice-dollar"></i>',
@@ -156,7 +157,7 @@
             </div>
 
             <div class="head-mid-segment-slogan">
-              Nhập tên hoặc link sản phẩm muốn tìm mua từ Amazon
+              Tìm là thấy, sale hot là mua, không chờ báo giá
             </div>
 
             <div class="head-mid-segment-form-outer">
@@ -206,7 +207,10 @@
               <div class="head-bot-segment-intro-list">
                 <?php
                   foreach ($arrIntroPanelList as $arrIntroPanelItem):
-                    ?>
+                ?>
+                  <?php
+                    if(empty($arrIntroPanelItem['introPanelUrl'])) :
+                  ?>
                     <div class="head-bot-segment-intro-panel">
                       <div class="segment-intro-panel-inner">
                         <div class="intro-panel-icon-outer">
@@ -227,8 +231,35 @@
                           ?>
                         </div>
                       </div>
-                    </div>
+                    </div> <!-- .head-bot-segment-intro-panel -->
                   <?php
+                    else :
+                  ?>
+                    <a target="_blank" href="<?php echo $arrIntroPanelItem['introPanelUrl']; ?>" class="head-bot-segment-intro-panel">
+                      <div class="segment-intro-panel-inner">
+                        <div class="intro-panel-icon-outer">
+                          <?php
+                            echo $arrIntroPanelItem['introPanelIcon'];
+                          ?>
+                        </div>
+
+                        <div class="intro-panel-main-title">
+                          <?php
+                            echo $arrIntroPanelItem['introPanelMainTitle'];
+                          ?>
+                        </div>
+
+                        <div class="intro-panel-title">
+                          <?php
+                            echo $arrIntroPanelItem['introPanelTitle'];
+                          ?>
+                        </div>
+                      </div>
+                    </a> <!-- .head-bot-segment-intro-panel -->
+                  <?php
+                    endif;
+                  ?>
+                <?php
                   endforeach;
                 ?>
               </div> <!-- .head-bot-segment-intro-list -->
@@ -449,6 +480,12 @@
                 endforeach;
               ?>
             </div>
+
+            <div class="head-segment-top-btn">
+              <a href="" class="btn-start-buy">
+                Mua sắm ngay
+              </a>
+            </div>
           </div>
           <!-- .head-segment-top -->
         </div>
@@ -460,12 +497,9 @@
             Amazon
           </div>
           <div class="foot-segment-content">
-          <span class="segment-content-item">
-          BẠN CHỌN ĐỒ TRÊN AMAZON, <br class="is-break"/>CHÚNG TÔI MUA HỘ BẠN!
-          </span>
             <span class="segment-content-item">
-          CHỦ ĐỘNG SĂN DEAL, PHIÊU CÙNG GIÁ CHẤT
-          </span>
+              Săn deal liền tay, không chờ báo giá
+            </span>
           </div>
           <!-- .foot-segment-content -->
           <div class="foot-segment-form-outer">
@@ -482,12 +516,9 @@
           </div>
           <!-- .foot-segment-form-outer -->
           <div class="foot-segment-slogan">
-          <span class="segment-slogan-item">
-          Mua hàng nhanh chóng <span class="slogan-dot">•</span> Giá bạn mua bằng giá bạn thấy<br class="is-break"/>Giao hàng sau 10-15 ngày <span class="slogan-dot">•</span> Bảo vệ người mua
-          </span>
             <span class="segment-slogan-item">
-          Lựa chọn không giới hạn <span class="slogan-dot">•</span> Không lo thủ tục <span class="slogan-dot">•</span> Yên tâm mua sắm <span class="slogan-dot">•</span> Tiết kiệm chi phí
-          </span>
+              Yên  tâm mua sắm <span class="slogan-dot">•</span> Bảo vệ người mua <span class="slogan-dot">•</span> Vận chuyển nhanh chóng <span class="slogan-dot">•</span> Tiết kiệm chi phí
+            </span>
           </div>
           <!-- .foot-segment-slogan -->
         </div>

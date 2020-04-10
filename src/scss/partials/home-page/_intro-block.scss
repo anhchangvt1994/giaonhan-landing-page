@@ -601,30 +601,33 @@
     @include getSizeOfText('md');
     @include transition(0.5s);
     border-radius: getBorderRadiusFromBase(12);
-    background: getColorInPaletteMap('primary','root');
-    color: #fff;
+    background: $mz-gray-lightest;
+    color: $mz-gray;
+    font-weight: 600;
+    overflow: hidden;
+    z-index: 0;
+
+    &::before {
+      @include transition(0.5s);
+      position: absolute;
+      left: 0;
+      top: 0;
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      background: url('../images/btn-bg__compressed.jpg') center/cover no-repeat;
+      z-index: -1;
+    }
 
     &:hover {
-      background: getLinkHoverColor(getColorInPaletteMap('primary','root'));
-    }
+      color: #ffffff;
+      box-shadow: 0 16px 24px -16px $mz-primary;
 
-    @include mq-md-up {
-      margin-left: 97px - (97px - getSpacingFromBase(7.5));
-    }
-  }
-
-  .btn-start-character {
-    display: none;
-
-    @include mq-md-up {
-      position: absolute;
-      display: block;
-      width: 97px;
-      height: 150px;
-      background: url('../images/mascot-01.svg') center/100% auto no-repeat;
-      transform: translateY(-65%);
-      top: 50%;
-      left: -1 * getSpacingFromBase(7.5);
+      &::before {
+        opacity: 1;
+      }
     }
   }
 
@@ -682,7 +685,7 @@
   }
 
   .foot-segment-content {
-    margin-bottom: getSpacingFromBase(2);
+    margin: 0 -#{getSpacingFromBase(1)} getSpacingFromBase(2);
     text-align: center;
     color: #fff;
   }
@@ -694,20 +697,6 @@
 
     @include getSizeOfText('h4');
     display: inline-block;
-
-    &:nth-child(2) {
-      display: none;
-    }
-
-    @include mq-md-up {
-      &:nth-child(1) {
-        display: none;
-      }
-
-      &:nth-child(2) {
-        display: inline-block;
-      }
-    }
   }
 
   .foot-segment-form-outer {
@@ -827,22 +816,6 @@
   .segment-slogan-item {
     display: inline-block;
     color: #fff;
-
-    @include mq-md-up {
-      &:nth-child(2) {
-        display: none;
-      }
-    }
-
-    @include mq-lg-up {
-      &:nth-child(1) {
-        display: none;
-      }
-
-      &:nth-child(2) {
-        display: inline-block;
-      }
-    }
   }
 
   .slogan-dot {
