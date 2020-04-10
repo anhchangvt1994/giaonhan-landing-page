@@ -583,6 +583,10 @@
       .segment-intro-panel-inner {
         @include box-shadow(0 16px 32px -16px rgba($mz-primary, 0.4));
       }
+
+      .intro-panel-title {
+        color: $mz-primary;
+      }
     }
   }
 
@@ -623,6 +627,7 @@
   }
 
   .intro-panel-title {
+    transition: $mz-transition-time-default;
     font-family: 'Roboto';
     font-stretch: condensed;
     text-align: center;

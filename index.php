@@ -116,7 +116,7 @@
         [
           'introPanelIcon'  => '<i class="intro-panel-icon fal fa-sync"></i>',
           'introPanelMainTitle' => 'Hỗ trợ đổi trả',
-          'introPanelTitle' => 'Chính sách',
+          'introPanelTitle' => 'Xem chính sách',
           'introPanelUrl' => 'https://www.giaonhan247.com/bai-viet/quy-dinh-doi-tra-hang-hoa',
         ],
         [
